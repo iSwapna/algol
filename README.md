@@ -5,7 +5,7 @@ My experiments with algorithms
 
 
 1. powerset:
-		Find poerset of sequence using dynamic algorithm
+		Find powerset of sequence using dynamic algorithm
 
 2. list:
 		Singly linked list with size
