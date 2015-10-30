@@ -11,6 +11,6 @@ My experiments with algorithms
 		Singly linked list with size
 
 3. bst:
-		Binary sreach tree (unbalanced) with rank, size, min, max, sum
+		Binary search tree (unbalanced) with rank, size, min, max, sum
 
 
