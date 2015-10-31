@@ -13,4 +13,5 @@ My experiments with algorithms
 3. bst:
 		Binary search tree (unbalanced) with rank, size, min, max, sum
 
-
+4. sort:
+		MergeSort
