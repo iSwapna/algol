@@ -1,8 +1,6 @@
 algol
 =====
 
-My experiments with algorithms
-
 
 1. powerset:
 		Find powerset of sequence using dynamic algorithm
