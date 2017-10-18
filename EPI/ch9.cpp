@@ -3,10 +3,8 @@
     Chapter 9 of EPI
 
 ***/
-#include <memory>
-#include "BinaryTree.hpp"
 
-using std::unique_ptr;
+#include "BinaryTree.hpp"
 
 template <typename T>
 bool isBalancedTree(const unique_ptr<BinaryTree<T>>& node) {
@@ -21,8 +19,8 @@ int getHeight(const unique_ptr<BinaryTree<T>>& node) {
   int rightHt = getHeight(node->right);
   if(rightHt == -2) return -2;
 
-  if(std::abs(leftHt - rightHt) > 1) return -2;
-  return std::max(leftHt, rightHt) + 1;
+  if(abs(leftHt - rightHt) > 1) return -2;
+  return max(leftHt, rightHt) + 1;
 
 }
 

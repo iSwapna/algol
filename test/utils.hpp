@@ -8,24 +8,22 @@ namespace astd {
       std::cout << item << " ";
     std::cout << std::endl;
   }
-  using uint32 = unsigned int;
-  
   class Random {
   public:
     Random() = default;
     Random(std::mt19937::result_type seed): eng(seed) {}
-    uint32 drawNum(uint32 start = 0, uint32 end = UINT32_MAX);
+    int drawNum(int start = 0, int end = INT_MAX);
   private:
     std::mt19937 eng{std::random_device{} () };
   };
   
-  uint32 Random::drawNum(uint32 start, uint32 end) {
-    return std::uniform_int_distribution<uint32>{start, end}(eng);
+  int Random::drawNum(int start, int end) {
+    return std::uniform_int_distribution<int>{start, end}(eng);
   }
   
-  std::vector<uint32> getArr(int len, int end = 10) {
+  std::vector<int> getArr(int len, int end = 10) {
     
-    std::vector<uint32> res;
+    std::vector<int> res;
     Random r;
     for(int i = 0; i < len; i++) {
       res.push_back(r.drawNum(0, end));
