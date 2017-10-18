@@ -20,7 +20,6 @@ namespace astd {
   };
   
   uint32 Random::drawNum(uint32 start, uint32 end) {
-    
     return std::uniform_int_distribution<uint32>{start, end}(eng);
   }
   
@@ -28,11 +27,8 @@ namespace astd {
     
     std::vector<uint32> res;
     Random r;
-    
     for(int i = 0; i < len; i++) {
-      
       res.push_back(r.drawNum(0, end));
-      
     }
     return res;
   }
