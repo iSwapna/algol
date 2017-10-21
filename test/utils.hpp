@@ -58,5 +58,53 @@ namespace astd {
     return arr;
 
   }
+
+  template <typename T>
+  void printBinary(const T& data) {
+    size_t bytes = CHAR_BIT * sizeof(data);
+    switch(bytes) {
+    case 8:
+      std::cout << std::bitset<8>(data) << std::endl;
+      break;
+    case 16:
+      std::cout << std::bitset<16>(data) << std::endl;
+      break;
+    case 32:
+      std::cout << std::bitset<32>(data) << std::endl;
+      break;
+    case 64:
+      std::cout << std::bitset<64>(data) << std::endl;
+      break;
+    default:
+      std::cout << "NON Standard Sz obj!!" << std::endl;
+    }
+  }
+
+  //template specialization for float
+  //should work for x86 
+  template <>
+  void printBinary(const float& data) {
+    std::uint32_t result = 0;
+    static_assert(sizeof(float) == sizeof(result), "float is not 32 bits");
+    constexpr auto size = sizeof(float);
+    std::uint8_t buffer[size] = {};
+    // memcpy through a byte buffer to satisfy
+    // the strict aliasing rule. This does not affect
+    // performance since memcpy is 'magic'
+    std::memcpy(buffer, std::addressof(data), size);
+    std::memcpy(std::addressof(result), buffer, size);
+    std::cout << std::bitset<32>(result) << std::endl;
+    
+    return;
+  }
+  template <typename T>
+  void printMemory(const T& data) {
+    const char* begin = reinterpret_cast<const char*>(&data);
+    const char* end = begin + sizeof(data);
+    while(begin != end)
+      std::cout << std::bitset<CHAR_BIT>(*begin++) << " ";
+    std::cout << std::endl;
+  }
+  
 } // astd
   

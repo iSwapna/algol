@@ -37,6 +37,7 @@ int bSearch(int num, const vector<int>& arr) {
 int findFirst(int key, const vector<int>& arr) {
 
   int lo = 0; int hi = arr.size() - 1;
+  int res = -1;
   while(hi >= lo) {
     // do not attempt to divide zero!!
     int mid = lo + ((hi -lo) >> 1); // bitshift is faster to div
@@ -45,11 +46,10 @@ int findFirst(int key, const vector<int>& arr) {
     else if(arr[mid] < key)
       lo = mid + 1;
     else if(arr[mid] == key) {
-      while(arr[--mid] == key);
-	return ++mid;
+      res = mid; hi = mid - 1;
     }
   }
-  return -1;
+  return res;
 }
 
 /*
