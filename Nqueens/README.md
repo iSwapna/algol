@@ -1,7 +1,7 @@
 Algorithm:
 	Recursive method with backtracking for N queens
 	
-	1. Place k-th queen of  on a safe row in the next available column
+	1. Place k-th queen of N on a safe row in the next available column
 	2. Try to find a safe solution by trying all combinations
 	   further down for k + 1 -th to N-th queens and columns. 
 	3. If all of the k + 1 -th result in a conflict further down,
@@ -18,7 +18,7 @@ Run (1):
 
 Place 19 queens on a 19 x 19 chessboard. Start at row 19
 
-Run (2);
+Run (2):
 
 Place 5 queens on 5 x 5 chessboard. Start at row 3
 
