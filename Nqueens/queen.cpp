@@ -107,5 +107,5 @@ int main() {
   cout << "SOL: " << endl;
   Q q(n);
   q.solveNqueens(m > n ? n - 1 : m - 1 > 0 ? m - 1 : 0);
-
+  //q.debug();
 }
