@@ -24,5 +24,5 @@ Place 5 queens on 5 x 5 chessboard. Start at row 3
 
 Run (3):
 
-Place 6 queens on a 6 x 6 chessboard. Start at row 4
+Place 6 queens on a 6 x 6 chessboard. Start at row 4. 
 All interim states of the board printed out. 
