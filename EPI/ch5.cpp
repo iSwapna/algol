@@ -16,3 +16,4 @@ short parity(unsigned long x) {
   }
   return res;
 }
+

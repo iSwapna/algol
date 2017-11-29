@@ -1,6 +1,6 @@
 /* TOPCODER 
    http://community.topcoder.com/stat?c=problem_statement&pm=3561&rd=6519
-   Problem Name:	 SortEstimate
+   Problem Name: SortEstimate
    Used In:	 SRM 230
    Used As:	 Division I Level One , Division II Level Two
    Categories:	 Math, Search
@@ -43,7 +43,5 @@ int main() {
 
   SortEstimate s;
   std::cout << s.howMany(1, 8) << " = " << 4.0 << std::endl;
-
-
 
 }

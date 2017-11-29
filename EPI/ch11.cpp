@@ -1,6 +1,8 @@
 /*
 *  Chapter 11 of EPI
 * Searching: Binary Search
+*
+* 11.1, 11.5, 11.9 
 */
 
 #include <iostream>
@@ -8,6 +10,7 @@
 #include <algorithm>
 
 using std::vector;
+using std::numeric_limits;
 
 /*
  * Classic Binary Search: Assuming NO negative Indexing possible!
@@ -66,6 +69,46 @@ int findSmallestInShifted(const vector<int>& arr) {
       lo = mid + 1;
     } else {
       hi = mid;
+    }
+  }
+  return lo;
+}
+
+/*
+ * Helper for 11.9
+ */
+
+int compare(double lo, double hi) {
+  // use normalized diff instead of absolute
+  double diff = (lo - hi)/hi;
+  return diff > -numeric_limits<double>::epsilon()
+    ? -1
+    : diff > numeric_limits<double>::epsilon();
+
+
+
+}
+/*
+ * 11.9 Finds the sqrt of a floating point number
+ */
+
+double sqrt(double x) {
+
+  double lo, hi;
+  if(compare(x, 1.0) < 0) {
+    lo = x; hi = 1.0;
+  }else {
+    lo = 1.0; hi = x;
+  }
+  while(compare(lo, hi) == -1) {
+    double root = lo + 0.5 * (hi - lo);
+    int res = compare(root * root, x);
+    if(res == 0)
+      return root;
+    else if(res == -1) {
+      lo = root; 
+    } else {
+      hi = root;
     }
   }
   return lo;

@@ -22,5 +22,6 @@ int main() {
   astd::print(arr);
   int idx = findSmallestInShifted(arr);
   cout << "findSmallestInShifted: " << idx << " val: " << arr[idx] << endl;
-
+  float x = 0.2525;
+  cout << "root of : " << x << " : " << sqrt(x) << endl;
 }
