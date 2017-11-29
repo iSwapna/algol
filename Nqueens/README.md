@@ -9,15 +9,20 @@ Algorithm:
 	   5. increment k-th choice to next safe choice --> step 1.
 
 	6. return safe choice found / not found
+	
+Results in res.txt
+------------------
+
+
 Run (1):
--------
+
 Place 19 queens on a 19 x 19 chessboard. Start at row 19
 
 Run (2);
--------
+
 Place 5 queens on 5 x 5 chessboard. Start at row 3
 
 Run (3):
--------
+
 Place 6 queens on a 6 x 6 chessboard. Start at row 4
 All interim states of the board printed out. 
