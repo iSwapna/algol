@@ -1,5 +1,6 @@
 Algorithm:
 	Recursive method with backtracking for N queens
+	
 	1. Place k-th queen of  on a safe row in the next available column
 	2. Try to find a safe solution by trying all combinations
 	   further down for k + 1 -th to N-th queens and columns. 
