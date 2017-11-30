@@ -39,7 +39,7 @@ int findSmallCyc2(vector<int>& arr) {
 }
 
 int main() {
-  vector<int> arr{9, 3, 4, 5, 6};
+  vector<int> arr{5, 6, 7, 8, 11, 21, 33, 44};
   cout << findSmallCyclic1(arr) << endl;
   cout << findSmallCyc2(arr) << endl;
 
