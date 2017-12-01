@@ -3,6 +3,14 @@
 
 using namespace std;
 
+/*
+ * Is it possible to choose a group of some array elements
+ * such that the group sums to the given target with this 
+ * additional constraint: If a value in the array is chosen to
+ * be in the group, the value immediately following it in the
+ * array must not be chosen. 
+ */
+
 bool grpNoAdj(vector<int> arr, int sum,
 	      int idx = 0, bool use = true) {
 
