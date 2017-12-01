@@ -2,7 +2,27 @@
 #include <vector>
 
 using namespace std;
+/*
+ * Most recursion / backtracking problems are
+ * either subsets or permutaions problem
+ * First correctly identify, then tackle current item,
+ * Let recursion take care of rest! add base case and...
+ * You Are Done!!
+ * This is a subset problem.
+ */
+bool poss(vector<int> arr, int sum, int idx = 0) {
 
+  if(idx == arr.size()) return (sum == 0);
+  if(poss(arr, sum - arr[idx], idx + 1))
+    return true;
+  if(poss(arr, sum, idx + 1))
+    return true;
+  return false;
+}
+
+/*
+ * This is the wrong way to approach!!
+ */
 bool findGrp(vector<int> ch,
 	     vector<int>& grp,
 	     int sum, int curr = 0) {
@@ -35,15 +55,16 @@ int main() {
   cout << "Choices: " << endl;
   pprint(ch);
   for(auto &sum: targets) {
-  cout << "Target Sum: " << sum << endl;
-  vector<int> res;
-  if(findGrp(ch, res, sum)) {
-    cout << "Res: "<< endl;
-    pprint(res);
-  } else
-    cout << "Not possible!" << endl;
+    cout << "Target Sum: " << sum << endl;
+    vector<int> res;
+    if(findGrp(ch, res, sum)) {
+      cout << "Res: "<< endl;
+      pprint(res);
+    } else
+      cout << "Not possible!" << endl;
+    cout << "Is Possible: " << poss(ch, sum) << endl;
   }
-    
+  
   return 0;
 }
 
