@@ -1,0 +1,30 @@
+Notes:
+
+Graphs data structure representations:
+
+  1. Adj matrix
+     -time complexity: constant time: specific edge exists
+     -But takes O(V) to get all edges from a node
+     -space complexity: O(V^2), bad -(most graphs are sparse)
+  2. Adj list 
+     -time complexity: O(1) for all edges for a vertex
+     -But takes O(d)(amortized): specific edge exists
+  3. Combine to use map/set to get benefit of both 1 & 2.
+     (can be set/map with edge wts and id as pairs)
+     -time complexity: O(1): specific edge exists,
+     	   	       O(1): all edges for this vertex
+
+Basic graph algos:
+  1. DFS:
+     - go as far as you can from this node,
+       marking newly discovered nodes as visited, until you run out of nodes or
+       you encounter a previously visited node (cycle)
+     - repeat for all non-visited nodes
+     - stack model 
+  2. BFS:
+     - visit all neighbors of this node, mark them as visited (including this)
+     -As you visit each new node, visit their neighbors,
+       unless, they were already visited.
+     -Repeat for all non-visited nodes
+     -queue model
+
