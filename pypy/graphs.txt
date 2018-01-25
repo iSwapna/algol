@@ -1,30 +1,59 @@
 Notes:
 
 Graphs data structure representations:
+-------------------------------------
 
   1. Adj matrix
-     -time complexity: constant time: specific edge exists
-     -But takes O(V) to get all edges from a node
-     -space complexity: O(V^2), bad -(most graphs are sparse)
+     - time complexity: constant time: specific edge exists
+     - but takes O(V) to get all edges from a node
+     - space complexity: O(V^2), bad -(most graphs are sparse)
   2. Adj list 
-     -time complexity: O(1) for all edges for a vertex
-     -But takes O(d)(amortized): specific edge exists
+     - time complexity: O(1) for all edges for a vertex
+     - but takes O(d)(amortized): specific edge exists
+     - degrees - undirected - d - no of edges incident
+       	       - directed - d-in - incoming edges, d-out - outgoing edges
   3. Combine to use map/set to get benefit of both 1 & 2.
      (can be set/map with edge wts and id as pairs)
-     -time complexity: O(1): specific edge exists,
-     	   	       O(1): all edges for this vertex
+     - time complexity: O(1): specific edge exists,
+          	   	O(1): all edges for this vertex	
+  4. Consider a map of vertexes or a heap
+     - what super powers to thee, posess??		       
 
 Basic graph algos:
+-----------------
   1. DFS:
      - go as far as you can from this node,
        marking newly discovered nodes as visited, until you run out of nodes or
        you encounter a previously visited node (cycle)
      - repeat for all non-visited nodes
-     - stack model 
+     - stack model / chalk and string in a maze
+     - finds cycles, connectivity between nodes
   2. BFS:
      - visit all neighbors of this node, mark them as visited (including this)
-     -As you visit each new node, visit their neighbors,
+     - as you visit each new node, visit their neighbors,
        unless, they were already visited.
-     -Repeat for all non-visited nodes
-     -queue model
+     - repeat for all non-visited nodes
+     - queue model
+  3. SCC:
+     - every directed graph is a DAG of it's SCC
+     - REVERSE graph - call it RevG
+     - this converts the DAGs' sources to sink and sink to sources
+     - now run DFS
+       - this will pull out the sinks of RevG's DAG( sources of G's DAG)
+       - but the SCC of RevG is same as SCC of G!
+       
+  4. Bipartite/2-color/no-cycles of odd length in undirected graph:
+     - run bfs and assign topological levels
+     - if an already checked node is encountered,
+       if it's level is the same as the parent node, G is not Bipartite
+     - NO LEVEL EDGES IN A TOPOLOGICAL ORDERING OF NODES
+     - NO CYCLES OF ODD LENGTH
+       
+  3. Shortest path:
+     -
 
+Graph Trivia for System design:
+------------------------------
+1. Web crawlers use DFS, caching new node, wt-ed by popularity heuristic
+   - popularity wt-ing can be localized and contextualized
+   - skews absolute truth - def of truth of a specific search is what???
