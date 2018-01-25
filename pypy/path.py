@@ -1,4 +1,5 @@
 #! usr/bin/python -tt
+
 import random
 from collections import deque
 
