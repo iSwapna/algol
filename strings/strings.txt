@@ -1,0 +1,6 @@
+Tries:
+1. Data structure to deal with lots of strings - document search where
+     -T =>sum of lengths of all strings, k =>lenght of search string
+2. Sorting of strings - better than merge sort. Merge sort takes T*k*ln..
+     -Tries take T*ln(k)
+3. 
