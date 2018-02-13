@@ -49,8 +49,6 @@ def pprint(gr):
             
         print "]"
     
-    
-#    for v in graph:
 newG = cloneGraph(graph)
 print "Old: " ,
 pprint(graph)

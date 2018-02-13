@@ -49,8 +49,17 @@ Basic graph algos:
      - NO LEVEL EDGES IN A TOPOLOGICAL ORDERING OF NODES
      - NO CYCLES OF ODD LENGTH
        
-  3. Shortest path:
-     -
+  3. Shortest path in graphs with no neg cycle:
+     - BFS finds the shortest path naturally
+     - need to keep back ref to calculate path
+     - if a node is seen again, it's a loop
+       and should be skipped in back ref or your path will loop!
+
+   4. Topological sort:
+      - DFS and valid only for DAGs
+      - BFS cannot order b/w nodes at same level, if they have cross edges
+      - results vary based on start node
+      
 
 Graph Trivia for System design:
 ------------------------------
