@@ -1,8 +1,16 @@
+/******
+ *
+ * Find minimum window of string, str:
+ * such that -it contains all chars in chk
+ *           -size of window is at least size of chk
+ *           -order is irrelevant
+ * O(N)
+***/
 #include <iostream>
 #include <unordered_map>
 using namespace std;
 
-// Find the minimum window if str containing all chars in chk
+
 string minWindow(const string& chk, const string& str) {
   unordered_map<char, int> need;
   for(auto &ch: chk)
