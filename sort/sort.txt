@@ -1,0 +1,12 @@
+Insertion sort:
+   1. stable, const space
+   2.O(N*N), good for almost sorted, streaming input
+
+SORT    :   stable   : T effic       : S effic   : locality : 
+-----------------------------------------------------------
+mergeS  |    Y       |   NlogN       |    O(1)   |    Y
+-----------------------------------------------------------
+heapS   |    Y       |   NlogN       |    O(1)   |    N
+-----------------------------------------------------------
+quickS  |    N       | N^2/ NlogN/ N |    O(1)   |    Y
+----------------------------------------------------------
