@@ -1,3 +1,7 @@
+/*
+ * check if tree is valid BST
+ *
+ */
 #include <iostream>
 #include <queue>
 #include "bst.h"
