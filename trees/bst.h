@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <stack>
 using namespace std;
 
 struct Node {
@@ -36,6 +37,37 @@ void printTree(Node* root) {
   cout << " " << root->val;
   printTree(root->right);
 
+}
+// NEED TO B FIXED!!! SHOULD BE LEVEL ORDER
+vector<int> serialize(Node* root) {
+  vector<int> data;
+  stack<Node*> st;
+  Node* curr = root;
+  bool done = false;
+  while(!done) {
+    if(curr) {
+      st.push(curr); curr = curr->left; 
+    } else if(st.empty())
+      done = true;
+    else {
+      curr = st.top(); st.pop();
+      data.push_back(curr->val);
+      curr = curr->right;
+    }
+  }
+  return data;
+}
+void printTreeAsTree(Node* root) {
+  vector<int> data = serialize(root);
+  int i = 0, max = 1;
+  for(auto &elem: data) {
+    if(max == i) {
+      cout << endl;
+      max *= 2; i = 0;
+    }
+    cout << " " << elem;
+  }
+  
 }
 void printBST(Node* root) {
   printTree(root);
