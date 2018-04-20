@@ -24,7 +24,7 @@ Node* insert(Node* root, int value) {
   return root;
 }
 Node* createBST(const vector<int> arr) {
-  if(arr.empty()) return nullptr;
+https://github.com/swapnai/algol/blob/master/trees/printPaths.cpp  if(arr.empty()) return nullptr;
   Node* root = nullptr;
   for(auto &value: arr)
     root = insert(root, value);
@@ -37,6 +37,13 @@ void printTree(Node* root) {
   cout << " " << root->val;
   printTree(root->right);
 
+}
+void printTreeWithLevel(Node* root, int level = 1, int parent = 0) {
+  if(root == nullptr) return;
+  printTreeWithLevel(root->left, level + 1, root->val);
+  cout << " level::" << level << "::parent::";
+  cout << parent << "::value::" << root->val << endl;
+  printTreeWithLevel(root->right, level + 1, root->val);
 }
 // NEED TO B FIXED!!! SHOULD BE LEVEL ORDER
 vector<int> serialize(Node* root) {
@@ -70,7 +77,7 @@ void printTreeAsTree(Node* root) {
   
 }
 void printBST(Node* root) {
-  printTree(root);
+  printTreeWithLevel(root);
   cout << endl;
 
 }
