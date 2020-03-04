@@ -47,6 +47,36 @@ int distance(vector<vector<int> > &adj, vector<vector<int> > &cost, int s, int t
 }
 
 int main() {
+
+  vector<vector<int>> adj1 = {{1, 3}, {2}, {}, {1, 2}};
+  vector<vector<int>> cost1 = {{14, 2}, {1}, {}, {4, 8}};
+
+  cout << "adj:" << endl;
+  int i = 0;
+  for( auto &nodes: adj1) {
+    cout << i << " --> " ;
+    for( auto node: nodes) {
+      cout << node << ", ";
+
+	}
+    cout << endl;
+    i++;
+  }
+
+  cout << "cost:" << endl;
+  i = 0;
+  for( auto &nodes: cost1) {
+    cout << i << " --> " ;
+    for( auto node: nodes) {
+      cout << node << ", ";
+
+	}
+    cout << endl;
+    i++;
+  }
+
+  std::cout << distance(adj1, cost1, 0, 2) << std::endl;
+  return 0;
   int n, m;
   std::cin >> n >> m;
   if ( n == 1 ) { 
